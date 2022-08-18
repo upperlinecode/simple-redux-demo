@@ -8,7 +8,7 @@ function App() {
     alert("coming soon!");
   };
 
-  const handelDecrementClick = () => {};
+  const handleDecrementClick = () => {};
 
   return (
     <div className="App">
