@@ -1,47 +1,24 @@
 import "./App.css";
-// import { useState } from 'react';
-import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "./redux/actionCreators";
+import { useState } from "react";
 
 function App() {
-  // const [count, setCount] = useState(0);
-  const count = useSelector((state) => state.counterReducer.count);
-  const loggedIn = useSelector((state) => state.loginReducer.status);
-  const dispatch = useDispatch();
+  const [count, setCount] = useState(0);
 
   const handleIncrementClick = () => {
-    dispatch(increment());
+    alert("coming soon!");
   };
 
-  const handelDecrementClick = () => {
-    dispatch(decrement());
-  };
+  const handelDecrementClick = () => {};
 
   return (
     <div className="App">
-      <h1>Count: {count}</h1>
+      <h1>Count: </h1>
       <div>
         <button onClick={handleIncrementClick}>+</button>
-        <button onClick={handelDecrementClick}>-</button>
+        <button>-</button>
       </div>
       <div>
-        {loggedIn ? (
-          <button
-            onClick={() => {
-              dispatch({ type: "LOGOUT" });
-            }}
-          >
-            Log Out
-          </button>
-        ) : (
-          <button
-            onClick={() => {
-              dispatch({ type: "LOGIN" });
-            }}
-          >
-            Log In
-          </button>
-        )}
+        <button>Log In</button>
       </div>
     </div>
   );
