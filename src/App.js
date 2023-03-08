@@ -18,7 +18,8 @@ function App() {
         <button>-</button>
       </div>
       <div>
-        <button>Log In</button>
+        <button>Lights on</button>
+        <button>Lights off</button>
       </div>
     </div>
   );
