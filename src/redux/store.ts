@@ -1,3 +1,4 @@
+import { composeWithDevTools } from "@redux-devtools/extension";
 import { combineReducers, createStore } from "redux";
 
 const INITIAL_COUNT_STATE = { count: 0 };
@@ -31,10 +32,10 @@ const allReducers = combineReducers({
   displayModeReducer: displayModeReducer,
 });
 
-const theStore = createStore(
-  allReducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const theStore = createStore(allReducers, composeWithDevTools());
+
+const initialCompositeState = theStore.getState();
+export type storeStateShape = typeof initialCompositeState;
 
 theStore.subscribe(() => console.log(theStore.getState()));
 

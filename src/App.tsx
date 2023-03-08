@@ -7,13 +7,16 @@ import {
   createLightsOnAction,
   createLightsOffAction,
 } from "./redux/actions";
+import { storeStateShape } from "./redux/store";
 
 function App() {
   // const [count, setCount] = useState(0);
   const dispatch = useDispatch();
-  const count = useSelector((state) => state.countReducer.count);
+  const count = useSelector(
+    (state: storeStateShape) => state.countReducer.count
+  );
   const areLightsOn = useSelector(
-    (state) => state.displayModeReducer.areLightsOn
+    (state: storeStateShape) => state.displayModeReducer.areLightsOn
   );
 
   const handleIncrementClick = () => {
